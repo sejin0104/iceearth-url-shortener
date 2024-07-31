@@ -11,7 +11,7 @@
         })(window, document, "clarity", "script", "k9zlm89vrc");
     </script>
 
-    <title>spoo.me URL Shortener</title>
+    <title>아스 URL 단축</title>
     <link rel="icon" type="image/png" href="https://spoo.me/static/images/favicon.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,7 +60,7 @@
 <body>
     <div class="self-promo">
         <div class="self-promo-inner"><a href="https://pypi.org/project/py-spoo-url/" target="_blank" rel="noopener">🥳
-                We just launched our own Python Package ↗ 🐍</a></div>
+                해당 웹 사이트는 특정 api를 활용한것입니다 ↗ 🐍</a></div>
         <button id="close-button" class="self-promo-close"><img width="20" height="20"
                 src="https://img.icons8.com/metro/30/ffffff/delete-sign.png" alt="delete-sign" /></button>
     </div>
@@ -69,11 +69,11 @@
             loading="lazy">
         <div class="links">
             <ul>
-                <li><a href="#" class="active">Shorten</a></li>
+                <li><a href="#" class="active">단축</a></li>
                 <li><a href="/api">API</a></li>
-                <li><a href="/stats">Stats</a></li>
-                <li><a href="/report">Report URL</a></li>
-                <li><a href="https://github.com/spoo-me/url-shortener" rel="noopener" target="_blank">Open-Source ↗</a>
+                <li><a href="/stats">상태</a></li>
+                <li><a href="/report">URL 신고</a></li>
+                <li><a href="https://github.com/spoo-me/url-shortener" rel="noopener" target="_blank">오픈소스 ↗</a>
                 </li>
                 <li onclick="showContactModal();"><a href="#">Contact</a></li>
             </ul>
@@ -91,11 +91,11 @@
             <span></span>
         </button>
         <ul class="mobile-menu">
-            <li><a href="#" class="active">Shorten</a></li>
+            <li><a href="#" class="active">단축</a></li>
             <li><a href="/api">API</a></li>
-            <li><a href="/stats">Stats</a></li>
-            <li><a href="/report">Report URL</a></li>
-            <li><a href="https://github.com/spoo-me/url-shortener" rel="noopener" target="_blank">Open-Source ↗</a>
+            <li><a href="/stats">상태</a></li>
+            <li><a href="/report">URL 신고</a></li>
+            <li><a href="https://github.com/spoo-me/url-shortener" rel="noopener" target="_blank">오픈소스 ↗</a>
             </li>
             <li onclick="showContactModal();">Contact</li>
         </ul>
@@ -103,34 +103,34 @@
 
     <div id="modalPopup" class="modal">
         <div class="modal-content">
-            <h2 class="modal-header">Contact Us</h2>
+            <h2 class="modal-header">문의하기</h2>
             <div class="button-container">
                 <button class="contact-button" onclick="openContactLink('/contact');"><img
                         src="https://img.icons8.com/ios-filled/100/ffffff/pencil--v1.png" alt="Contact Form Symbol"
                         loading="lazy">
-                    <p>Contact Form</p>
+                    <p>아래로 문의해요!</p>
                 </button>
-                <button class="contact-button" onclick="openContactLink('https://spoo.me/discord');"><img
+                <button class="contact-button" onclick="openContactLink('#');"><img
                         src="https://img.icons8.com/ios-filled/100/ffffff/discord-logo.png" alt="Discord Logo"
                         loading="lazy">
                     <p>Discord</p>
                 </button>
-                <button class="contact-button" onclick="openContactLink('https://twitter.com/spoo_me');"><img
+                <button class="contact-button" onclick="openContactLink('#');"><img
                         src="https://img.icons8.com/ios-filled/100/ffffff/twitterx--v1.png" alt="Twitter Logo"
                         loading="lazy">
                     <p>Twitter</p>
                 </button>
-                <button class="contact-button" onclick="openContactLink('https://instagram.com/spoo.me');"><img
+                <button class="contact-button" onclick="openContactLink('#');"><img
                         src="https://img.icons8.com/ios-filled/100/ffffff/instagram-new.png" alt="Instagram Logo"
                         loading="lazy">
                     <p>Instagram</p>
                 </button>
-                <button class="contact-button" onclick="openContactLink('mailto:support@spoo.me');"><img
+                <button class="contact-button" onclick="openContactLink('#');"><img
                         src="https://img.icons8.com/pastel-glyph/100/ffffff/new-post--v1.png" alt="Email Icon"
                         loading="lazy">
                     <p>Email</p>
                 </button>
-                <button class="contact-button" onclick="openContactLink('https://github.com/spoo-me');"><img
+                <button class="contact-button" onclick="openContactLink('#');"><img
                         src="https://img.icons8.com/material-sharp/100/ffffff/github.png" alt="Github Logo"
                         loading="lazy">
                     <p>Github</p>
@@ -143,7 +143,7 @@
     <div class="form-section">
         <form action="/" method="POST" onsubmit="return validateURL() && validatePassword();">
             <h1>
-                <label for="long-url" id="tagline"><b>Shorten Your URLs, Not Your Possiblities.</b></label>
+                <label for="long-url" id="tagline"><b>가능성이 아닌 URL을 단축하세요.</b></label>
             </h1>
             <p id="url-error"></p>
             <input type="text" id="long-url" name="url" required placeholder="https://your-long-url.com" value="{{ url }}">
@@ -154,14 +154,14 @@
             {% endif %}
             <div class="alias-time-container">
                 <div class="child">
-                    <label for="alias">Custom Alias</label>
+                    <label for="alias">커스텀 별명</label>
                     <div class="buttonIn">
                         <div id="input-prefix">
                             <span>{{ host_url }}</span>
                         </div>
                         <input type="text" id="alias" name="alias" placeholder="your-custom-alias">
                     </div>
-                    <p id="non-imp">leave blank for random url slug</p>
+                    <p id="non-imp">아무것도 적지 안을시 랜덤한 글자가 들어갑니다</p>
                 </div>
                 <!--  Custom Time Expiration is currently Buggy and not ready for Production  -->
                 <!-- <div class="child">
@@ -172,15 +172,15 @@
             </div>
             <p id="password-error"></p>
             <div id="password-div">
-                <label for="password">Password</label>
+                <label for="password">비밀번호</label>
                 <input type="password" id="password" name="password" placeholder="optional" class="invalid">
             </div>
             <div id="clicks-div">
-                <label for="max-clicks">Max Clicks</label>
+                <label for="max-clicks">최대 클릭수</label>
                 <input type="number" id="max-clicks" name="max-clicks" placeholder="optional" min="1">
             </div>
             <div id="sub">
-                <button type="submit">Shorten URL</button>
+                <button type="submit">단축하기</button>
             </div>
         </form>
 
@@ -198,8 +198,8 @@
                 </div>
                 <div class="section-2">
                     <div class="button-container">
-                        <button class="copy-button" data-url="{{ host_url }}{{ url }}">Copy</button>
-                        <button class="stats-button">Stats</button>
+                        <button class="copy-button" data-url="{{ host_url }}{{ url }}">복사</button>
+                        <button class="stats-button">상태</button>
                     </div>
                 </div>
             </div> {% endfor %} </div>
@@ -210,11 +210,11 @@
         <div class="metrics">
             <div class="links-shortened">
                 <h2 id="total-urls"></h2>
-                <h4>LINKS SHORTENED</h4>
+                <h4>링크가 단축됐어요!</h4>
             </div>
             <div class="clicks-served">
                 <h2 id="total-clicks"></h2>
-                <h4>CLICKS REDIRECTED</h4>
+                <h4>클릭하여 이동하기</h4>
             </div>
             <div class="github-stars">
                 <a id="github-stars-link" href="/github" target="_blank">
